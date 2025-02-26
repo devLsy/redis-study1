@@ -13,4 +13,9 @@ public class UserService2 {
 
     private final UserRepository repository;
     private final RedisTemplate redisTemplate;
+
+    @Cacheable(value = "user", key = "#id", unless = "#result == null")
+    public User getUserData(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }
