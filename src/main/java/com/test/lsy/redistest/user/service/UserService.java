@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 
-@Service
+@Service("userService1")
 @Slf4j
 @RequiredArgsConstructor
 public class UserService {
