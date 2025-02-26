@@ -39,7 +39,7 @@ public class UserService {
 
         if (findUser != null) {
             // DB 조회 후 Redis에 캐싱 (100초 TTL)
-            redisTemplate.opsForValue().set(cacheKey, findUser, 100, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(cacheKey, findUser, 400, TimeUnit.SECONDS);
         }
 
         long dbEndTime = System.currentTimeMillis(); // DB 조회 끝 시간
