@@ -1,5 +1,6 @@
 package com.test.lsy.redistest.user.controller;
 
+import com.test.lsy.redistest.user.model.User;
 import com.test.lsy.redistest.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class UserController {
     private final UserService service;
 
     @GetMapping("/{id}")
-    public String getUser(@PathVariable Long id) {
+    public User getUser(@PathVariable Long id) {
         return service.getUserData(id);
     }
 }
