@@ -43,10 +43,6 @@ public class UserService {
         }
 
         long dbEndTime = System.currentTimeMillis(); // DB 조회 끝 시간
-
-        // DB 조회 후 Redis에 캐싱 (100초 TTL)
-        redisTemplate.opsForValue().set(cacheKey, findUser, 100, TimeUnit.SECONDS);
-
         long dbElapsedTime = dbEndTime - dbStartTime; // DB 조회 시간
         long endTime = System.currentTimeMillis(); // 전체 종료 시간
         long totalElapsedTime = endTime - startTime; // 전체 시간
