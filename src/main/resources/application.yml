@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9091
   servlet:
     context-path: /
     encoding:
@@ -29,6 +29,13 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+
+  # Redis 세션 설정
+  session:
+    store-type: redis   # 세션을 Redis에 저장
+    redis:
+      namespace: session   # Redis에 저장할 세션 데이터의 네임스페이스
+      timeout: 1800  # 세션 타임아웃 (초 단위)
 
 # Redis 설정 추가
 data:
